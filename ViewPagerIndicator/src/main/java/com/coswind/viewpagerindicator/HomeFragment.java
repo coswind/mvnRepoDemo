@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.viewpagerindicator.TabPageIndicator;
 
+import uk.co.senab.actionbarpulltorefresh.extras.actionbarsherlock.PullToRefreshLayout;
+import uk.co.senab.actionbarpulltorefresh.library.ActionBarPullToRefresh;
+import uk.co.senab.actionbarpulltorefresh.library.listeners.OnRefreshListener;
+
 /**
  * Created by coswind on 11/28/13.
  */
@@ -29,11 +33,11 @@ public class HomeFragment extends SherlockFragment {
     private void initView() {
         ViewPager viewPager = (ViewPager) contentView.findViewById(R.id.pager);
         viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
-            protected final String[] CONTENT = new String[] { "ONE", "TWO", "THR" };
+            protected final String[] CONTENT = new String[]{"ONE", "TWO", "THR"};
 
             @Override
             public Fragment getItem(int i) {
-                return new PlaceholderFragment();
+                return new TabFragment();
             }
 
             @Override
@@ -49,21 +53,5 @@ public class HomeFragment extends SherlockFragment {
 
         TabPageIndicator pageIndicator = (TabPageIndicator) contentView.findViewById(R.id.titles);
         pageIndicator.setViewPager(viewPager);
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
     }
 }
