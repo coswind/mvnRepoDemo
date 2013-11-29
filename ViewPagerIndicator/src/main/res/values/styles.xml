@@ -1,8 +1,19 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <!-- Customize your theme here. -->
+    <style name="Theme.Styled" parent="Theme.Sherlock.Light.DarkActionBar">
+        <item name="vpiTabPageIndicatorStyle">@style/CustomTabPagerIndicator</item>
+    </style>
+
+    <style name="CustomTabPagerIndicator" parent="Widget.TabPageIndicator">
+        <item name="android:textColor">#ff50559e</item>
+        <item name="android:background">@drawable/tab_indicator_ab_example</item>
+        <item name="android:divider">@drawable/custom_tab_indicator_divider</item>
+        <item name="android:dividerPadding" tools:ignore="NewApi">10dp</item>
+        <item name="android:showDividers" tools:ignore="NewApi">middle</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:fadingEdgeLength">8dp</item>
     </style>
 
 </resources>
