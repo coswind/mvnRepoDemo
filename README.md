@@ -1,6 +1,6 @@
 ##Info
 
-Run Under Android 2.3+!!!!
+Run Android 2.3+
 
 ActionBarSherlock + SherlockNavigationDrawer + ViewPagerIndicator + ActionBarSherlockPullToRefresh
 
