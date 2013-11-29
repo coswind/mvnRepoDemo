@@ -7,15 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import uk.co.senab.actionbarpulltorefresh.extras.actionbarsherlock.PullToRefreshLayout;
 import uk.co.senab.actionbarpulltorefresh.library.ActionBarPullToRefresh;
+import uk.co.senab.actionbarpulltorefresh.library.Options;
 import uk.co.senab.actionbarpulltorefresh.library.listeners.OnRefreshListener;
 
 /**
  * Created by coswind on 11/29/13.
  */
 public class TabFragment extends Fragment implements OnRefreshListener {
-    private PullToRefreshLayout mPullToRefreshLayout;
+    private CustomPullToRefreshLayout mCustomPullToRefreshLayout;
 
     public TabFragment() {
     }
@@ -25,12 +25,15 @@ public class TabFragment extends Fragment implements OnRefreshListener {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        mPullToRefreshLayout = (PullToRefreshLayout) rootView.findViewById(R.id.ptr_layout);
+        mCustomPullToRefreshLayout = (CustomPullToRefreshLayout) rootView.findViewById(R.id.ptr_layout);
 
         ActionBarPullToRefresh.from(getActivity())
+                .options(Options.create()
+                        .headerLayout(R.layout.custom_pullrefresh_header)
+                        .headerTransformer(new CustomHeaderTransformer()).build())
                 .allChildrenArePullable()
                 .listener(this)
-                .setup(mPullToRefreshLayout);
+                .setup(mCustomPullToRefreshLayout);
 
         return rootView;
     }
@@ -41,7 +44,7 @@ public class TabFragment extends Fragment implements OnRefreshListener {
             @Override
             protected Void doInBackground(Void... params) {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(6000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -52,7 +55,7 @@ public class TabFragment extends Fragment implements OnRefreshListener {
             protected void onPostExecute(Void result) {
                 super.onPostExecute(result);
                 // Notify PullToRefreshLayout that the refresh has finished
-                mPullToRefreshLayout.setRefreshComplete();
+                mCustomPullToRefreshLayout.setRefreshComplete();
             }
         }.execute();
     }

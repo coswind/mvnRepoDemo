@@ -1,4 +1,4 @@
-<uk.co.senab.actionbarpulltorefresh.extras.actionbarsherlock.PullToRefreshLayout
+<com.coswind.viewpagerindicator.CustomPullToRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ptr_layout"
     android:layout_width="match_parent"
@@ -14,4 +14,4 @@
             android:layout_height="wrap_content" />
     </ScrollView>
 
-</uk.co.senab.actionbarpulltorefresh.extras.actionbarsherlock.PullToRefreshLayout>
+</com.coswind.viewpagerindicator.CustomPullToRefreshLayout>
