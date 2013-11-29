@@ -1,7 +1,6 @@
-NavigationDrawer_CustomTabViewPagerIndicator
-============================================
+##Info
 
-ActionBarSherlock + SherlockNavigationDrawer + ViewPagerIndicator
+ActionBarSherlock + SherlockNavigationDrawer + ViewPagerIndicator + ActionBarSherlockPullToRefresh
 
 
 ##Screenshots:
