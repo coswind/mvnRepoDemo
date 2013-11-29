@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import uk.co.senab.actionbarpulltorefresh.library.widget.PullToRefreshProgressBar;
@@ -45,6 +46,7 @@ public class CustomPullRefreshProgressBar extends View implements
     private float mProgressBarRadiusPx;
 
     private int[] mProgressBarColors;
+    private int mProgressIndex;
 
     private final RectF mDrawRect = new RectF();
 
@@ -68,12 +70,7 @@ public class CustomPullRefreshProgressBar extends View implements
         mPaint.setAntiAlias(true);
         mPaint.setColor(getResources().getColor(R.color.default_progress_bar_color));
 
-        mProgressBarColors = new int[] {
-            getResources().getColor(R.color.gBtn),
-            getResources().getColor(R.color.gBlue),
-            getResources().getColor(R.color.gDarkBlue),
-            getResources().getColor(R.color.gGreen)
-        };
+        mProgressBarColors = getResources().getIntArray(R.array.rainbow);
     }
 
     public synchronized boolean isIndeterminate() {
@@ -122,8 +119,6 @@ public class CustomPullRefreshProgressBar extends View implements
             return;
         }
 
-        //mPaint.setColor(mProgressBarColor);
-
         final float animProgress = mIndeterminateAnimator.getAnimatedValue();
         final float barWidth = canvas.getWidth() / (float) mSegmentCount;
 
@@ -131,10 +126,14 @@ public class CustomPullRefreshProgressBar extends View implements
             final float l = (i + animProgress) * barWidth;
             final float r = l + barWidth - mIndeterminateBarSpacing;
 
-            mPaint.setColor(mProgressBarColors[(i + 1) % 4]);
+            mPaint.setColor(mProgressBarColors[(i + 1 + mProgressIndex) % (mSegmentCount + 1)]);
 
             mDrawRect.set(l, 0f, r, canvas.getHeight());
             canvas.drawRect(mDrawRect, mPaint);
+        }
+
+        if (animProgress >= 1) {
+            mProgressIndex = (mProgressIndex + mSegmentCount) % (mSegmentCount + 1);
         }
     }
 

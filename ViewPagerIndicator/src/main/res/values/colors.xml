@@ -4,4 +4,13 @@
     <color name="gBlue">#4B8EFA</color>
     <color name="gDarkBlue">#1D6BB9</color>
     <color name="gGreen">#4BB448</color>
+    <color name="dirtyBlue">#4AE3E3</color>
+    <color name="turqoise">#64F4AE</color>
+
+    <array name="rainbow">
+        <item>@color/gBtn</item>
+        <item>@color/gBlue</item>
+        <item>@color/gDarkBlue</item>
+        <item>@color/gGreen</item>
+    </array>
 </resources>
