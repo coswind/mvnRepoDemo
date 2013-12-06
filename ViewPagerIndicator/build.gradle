@@ -31,5 +31,6 @@ dependencies {
     compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
     compile 'com.coswind.viewpagerindicator:viewpagerindicator:1.1-SNAPSHOT'
     compile 'com.github.chrisbanes.actionbarpulltorefresh:library:0.9.2'
+    compile 'me.imid.swipebacklayout:swipebacklayout:1.1-SNAPSHOT'
     compile 'com.nineoldandroids:library:2.4.0'
 }

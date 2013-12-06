@@ -2,7 +2,7 @@
 
 Run Android 2.3+
 
-ActionBarSherlock + SherlockNavigationDrawer + ViewPagerIndicator + ActionBarSherlockPullToRefresh
+ActionBarSherlock + SherlockNavigationDrawer + ViewPagerIndicator + ActionBarSherlockPullToRefresh + SwipeBackLayout
 
 
 ##Screenshots:

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,10 +15,13 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.MenuItem;
 import com.sherlock.navigationdrawer.compat.SherlockActionBarDrawerToggle;
 
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
 /**
  * Created by coswind on 11/28/13.
  */
-public class HomeActivity extends SherlockFragmentActivity {
+public class HomeActivity extends SwipeBackActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mListView;
     private ActionBar mActionBar;
@@ -37,6 +41,8 @@ public class HomeActivity extends SherlockFragmentActivity {
 
         initView();
         initEvent();
+
+        getSwipeBackLayout().setEdgeTrackingEnabled(SwipeBackLayout.EDGE_RIGHT);
     }
 
     private void initView() {
@@ -104,5 +110,15 @@ public class HomeActivity extends SherlockFragmentActivity {
                 mDrawerLayout.closeDrawer(mListView);
             }
         });
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            scrollToFinishActivity();
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 }
