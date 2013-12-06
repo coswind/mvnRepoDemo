@@ -42,7 +42,7 @@ public class HomeActivity extends SwipeBackActivity {
         initView();
         initEvent();
 
-        getSwipeBackLayout().setEdgeTrackingEnabled(SwipeBackLayout.EDGE_RIGHT);
+        getSwipeBackLayout().setEdgeTrackingEnabled(SwipeBackLayout.EDGE_BOTTOM);
     }
 
     private void initView() {
