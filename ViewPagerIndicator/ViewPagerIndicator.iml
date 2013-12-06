@@ -72,10 +72,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="support-v4-18.0.0" level="project" />
     <orderEntry type="library" exported="" name="ComGithubChrisbanesActionbarpulltorefreshLibrary092.aar" level="project" />
+    <orderEntry type="library" exported="" name="ComCoswindViewpagerindicatorViewpagerindicator11SNAPSHOT.aar" level="project" />
     <orderEntry type="library" exported="" name="ComActionbarsherlockActionbarsherlock440.aar" level="project" />
     <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="ComSherlockNavigationdrawer10SNAPSHOT.aar" level="project" />
-    <orderEntry type="library" exported="" name="ComActionbarsherlockViewpagerindicator241.aar" level="project" />
   </component>
 </module>
 

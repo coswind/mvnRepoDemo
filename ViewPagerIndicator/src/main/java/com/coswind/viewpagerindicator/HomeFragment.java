@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.actionbarsherlock.app.SherlockFragment;
-import com.viewpagerindicator.TabPageIndicator;
 
 /**
  * Created by coswind on 11/28/13.
@@ -47,7 +46,7 @@ public class HomeFragment extends SherlockFragment {
             }
         });
 
-        TabPageIndicator pageIndicator = (TabPageIndicator) contentView.findViewById(R.id.titles);
+        TabPagerIndicator pageIndicator = (TabPagerIndicator) contentView.findViewById(R.id.titles);
         pageIndicator.setViewPager(viewPager);
     }
 }

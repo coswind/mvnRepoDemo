@@ -29,7 +29,7 @@ dependencies {
     compile 'com.android.support:support-v4:18.0.+'
     compile 'com.sherlock:navigationdrawer:1.0-SNAPSHOT@aar'
     compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
-    compile 'com.actionbarsherlock:viewpagerindicator:2.4.1'
+    compile 'com.coswind.viewpagerindicator:viewpagerindicator:1.1-SNAPSHOT'
     compile 'com.github.chrisbanes.actionbarpulltorefresh:library:0.9.2'
     compile 'com.nineoldandroids:library:2.4.0'
 }
