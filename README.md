@@ -4,6 +4,8 @@ Run Android 2.3+
 
 ActionBarSherlock + SherlockNavigationDrawer + ViewPagerIndicator + ActionBarSherlockPullToRefresh
 
+##Demo Apk [Android 2.3+]
+[Demo Apk](https://github.com/coswind/NavigationDrawer_CustomTabViewPagerIndicator/raw/master/demo.apk)
 
 ##Screenshots:
 
