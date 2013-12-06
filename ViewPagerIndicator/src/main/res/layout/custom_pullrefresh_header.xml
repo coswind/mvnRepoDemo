@@ -17,7 +17,7 @@
 
     </FrameLayout>
 
-    <com.coswind.viewpagerindicator.CustomPullRefreshProgressBar
+    <com.coswind.viewpagerindicator.PullRefreshProgressBar
         android:id="@id/ptr_progress"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />

@@ -9,13 +9,14 @@ import android.view.ViewGroup;
 
 import uk.co.senab.actionbarpulltorefresh.library.ActionBarPullToRefresh;
 import uk.co.senab.actionbarpulltorefresh.library.Options;
+import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout;
 import uk.co.senab.actionbarpulltorefresh.library.listeners.OnRefreshListener;
 
 /**
  * Created by coswind on 11/29/13.
  */
 public class TabFragment extends Fragment implements OnRefreshListener {
-    private CustomPullToRefreshLayout mCustomPullToRefreshLayout;
+    private PullToRefreshLayout mPullToRefreshLayout;
 
     public TabFragment() {
     }
@@ -23,17 +24,16 @@ public class TabFragment extends Fragment implements OnRefreshListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.tab_fragment, container, false);
 
-        mCustomPullToRefreshLayout = (CustomPullToRefreshLayout) rootView.findViewById(R.id.ptr_layout);
+        mPullToRefreshLayout = (PullToRefreshLayout) rootView.findViewById(R.id.ptr_layout);
 
         ActionBarPullToRefresh.from(getActivity())
                 .options(Options.create()
-                        .headerLayout(R.layout.custom_pullrefresh_header)
-                        .headerTransformer(new CustomHeaderTransformer()).build())
+                        .headerLayout(R.layout.custom_pullrefresh_header).build())
                 .allChildrenArePullable()
                 .listener(this)
-                .setup(mCustomPullToRefreshLayout);
+                .setup(mPullToRefreshLayout);
 
         return rootView;
     }
@@ -55,7 +55,7 @@ public class TabFragment extends Fragment implements OnRefreshListener {
             protected void onPostExecute(Void result) {
                 super.onPostExecute(result);
                 // Notify PullToRefreshLayout that the refresh has finished
-                mCustomPullToRefreshLayout.setRefreshComplete();
+                mPullToRefreshLayout.setRefreshComplete();
             }
         }.execute();
     }

@@ -19,7 +19,7 @@ public class HomeFragment extends SherlockFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        contentView = inflater.inflate(R.layout.activity_main, container, false);
+        contentView = inflater.inflate(R.layout.home_fragment, container, false);
 
         initView();
 
